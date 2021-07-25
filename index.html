@@ -5,25 +5,35 @@
     <h1> Family Book</h1>
   </head>
   <body style="text-align: center;">
-   <img id="album" src="https://i.pinimg.com/736x/13/1a/f4/131af4e75df464f09410056fc84adadf.jpg">
+   <img id="album" src="https://i.pinimg.com/736x/13/1a/f4/131af4e75df464f09410056fc84adadf.jpg" style="width: 200px; height: 300px;">
+   <h4 id="name_of_members">FAMILY BOOK</h4>
     <div>
-      <button type="button" onclick="move()"> Next</button>
+      <button type="button" onclick="next()"> Next</button>
     </div>
     <script>
     var image=[
      "https://i.pinimg.com/originals/df/66/9f/df669f414be7c4a0d947a299e3be923d.jpg", 
      "https://image.shutterstock.com/image-vector/cute-baby-girl-pose-hands-260nw-734952880.jpg",
      "https://s.clipartkey.com/mpngs/s/307-3070001_big-image-png-lady-with-a-purse-clipart.png",
-     "https://i.postimg.cc/wjMnFtMX/father.jpg",
+     "https://i.postimg.cc/wjMnFtMX/father.jpg"
    ];
-   
-   var i=0
-   function move(){
-     if(i>3){
-       i=0
+     var names =["John","Emma","Judith","Ronald"];
+
+   var i=0;
+   function next()
+   {
+     i++;
+     var number_of_members=3;
+     if(i > number_of_members)
+     {
+       i=0;
      }
-     document.getElementById("album").src= image[i];i++;
-   }
+     var updatedimage=image[i];
+     var updatedname= names[i];
+     document.getElementById("album").src= updatedimage;
+     document.getElementById("name_of_members").innerHTML= updatedname;
+
+    }
  </script>
   </body>
 </html>
